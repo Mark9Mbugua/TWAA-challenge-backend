@@ -10,12 +10,10 @@ router.route('/').get((req, res) => {
 router.route('/create').post((req, res) => {
     const title = req.body.title;
     const body = req.body.body;
-    const date = Date.parse(req.body.date);
 
     const newArticle = new Article({
         title, 
         body, 
-        date
     });
 
     newArticle.save()
